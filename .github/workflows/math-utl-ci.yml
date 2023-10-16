@@ -13,10 +13,10 @@ jobs:
 
     steps:                             #2. Làm các bước sau trên server mượn
     - uses: actions/checkout@v3        #2.1 Lấy toàn bộ code từ kho chuyển qua server
-    - name: Set up JDK 20              #2.2 Mượn JDK trên server
+    - name: Set up JDK 21              #2.2 Mượn JDK trên server
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven          #2.3 Chuẩn bị chạy lệnh đóng gói app
