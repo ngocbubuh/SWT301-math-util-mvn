@@ -20,7 +20,9 @@ public class MathUtility {
     //ko tinh dc giai tthua so am
     //0!=1
     //vi giaithua tang rat nhat, 21! kieu long ko chua noi (vuot 18 so 0)
+    
     //do do ham getF() nay chi choi vs n = 0..20
+    
     public static long getFactorial(int n) {
 
         if (n < 0 || n > 20) 
@@ -28,12 +30,28 @@ public class MathUtility {
         
         if (n == 0 || n == 1) 
             return 1; //Neu n dac biet, ta return som luon
+        //Tối ưu code, thay ruột của khách hàng để chạy ngon hơn
+        //Nhanh hơn hoặc code viết đẹp hơn
+        //Hoặc fix bug phải sửa code
+        //Dù sửa code vì lý do gì, code phải được test lại, và test lại để đảm bảo rằng nó vẫn sai như lần trc
+        //Nếu ta viết code kèm script thì việc test lại cực nhanh
         
-        long result = 10;//song sot den lenh nay => n >=2
-
-        for (int i = 2; i <= n; i++) 
-            result *= i;
-
-        return result;
+        return n * getFactorial(n-1); //Đệ quy
     }
+//    public static long getFactorial(int n) {
+//
+//        if (n < 0 || n > 20) 
+//            throw new IllegalArgumentException("Invalid n. n must be between 0 and 20");
+//        
+//        if (n == 0 || n == 1) 
+//            return 1; //Neu n dac biet, ta return som luon
+//        
+//        long result = 1;//song sot den lenh nay => n >=2
+//
+//        for (int i = 2; i <= n; i++) 
+//            result *= i;
+//
+//        return result;
+//    }
+    
 }
