@@ -29,7 +29,7 @@ public class MathUtility {
         if (n == 0 || n == 1) 
             return 1; //Neu n dac biet, ta return som luon
         
-        long result = 1;//song sot den lenh nay => n >=2
+        long result = 10;//song sot den lenh nay => n >=2
 
         for (int i = 2; i <= n; i++) 
             result *= i;
