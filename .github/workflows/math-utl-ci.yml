@@ -1,0 +1,32 @@
+name: Math Util Repo applying CI
+
+on:
+  push:
+    branches: ["main"] # Bất kỳ khi nào ai đó push code lên main
+  pull_request:
+    branches: ["main"]
+                    # thì làm các việc dưới đây
+jobs:
+  build:
+
+    runs-on: ubuntu-latest #1 Mượn 1 cái server của Mỹ, cài sẵn hệ điều hành Ubuntu
+
+    steps:                             #2. Làm các bước sau trên server mượn
+    - uses: actions/checkout@v3        #2.1 Lấy toàn bộ code từ kho chuyển qua server
+    - name: Set up JDK 21              #2.2 Mượn JDK trên server
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven          #2.3 Chuẩn bị chạy lệnh đóng gói app
+      run: mvn -B package --file pom.xml
+
+    - name: Distribute jar-war file # Gửi file .jar .war đi đâu, CD nhảy vào ...
+      run: mkdir staging && cp target/*.jar staging # tạo thư mục staging chứa file .jar .war sau khi build      
+     
+    - name: Make hyperlink to jar-war file # Tạo hyperlink để download build 
+      uses: actions/upload-artifact@v1
+      with:
+        name: HAY-DOWNLOAD-EM-O-DAY # Bản build .JAR/WAR được nén ở link kế bên
+        path: staging
