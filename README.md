@@ -1,3 +1,5 @@
+[![Math Util Repo applying CI](https://github.com/ngocbubuh/SWT301-math-util-mvn/actions/workflows/math-utl-ci.yml/badge.svg)](https://github.com/ngocbubuh/SWT301-math-util-mvn/actions/workflows/math-utl-ci.yml)
+
 ### Welcome to Math Utility Repository
 
 #### You will find in this repository the following stuff:
