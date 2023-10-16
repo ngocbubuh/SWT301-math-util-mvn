@@ -33,6 +33,11 @@ public class MathUtilityTest {
         assertEquals(1, MathUtility.getFactorial(0));
     }
     
+    @Test
+    public void verifyFactorialGivenRightArgument1ReturnsOk(){
+        assertEquals(1, MathUtility.getFactorial(1));
+    }
+    
     //Test case #2: n = 6
     @Test
     public void verifyFactorialGivenRightArgument6ReturnsOk(){
