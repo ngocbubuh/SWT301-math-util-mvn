@@ -6,7 +6,7 @@
 
 * A Maven project to demonstrate the Math library 
 * A Unit Test test script using JUnit Test Framework
-* A CI (Continuos Intergration) script running on GitHub Actions
+* A CI (Continuous Integration) script running on GitHub Actions
 
 ![Test Script with JUnit](https://github.com/ngocbubuh/SWT301-math-util-mvn/blob/main/screenshots/test-script%20with%20junit.png)
 
